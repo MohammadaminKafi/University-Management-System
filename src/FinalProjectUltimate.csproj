@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC4989BE-CC74-4640-8464-E793F840B124}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FinalProjectUltimate</RootNamespace>
+    <AssemblyName>FinalProjectUltimate</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ArrayToExcel, Version=2.2.1.0, Culture=neutral, PublicKeyToken=89f038f583b61d66, processorArchitecture=MSIL">
+      <HintPath>packages\ArrayToExcel.2.2.1\lib\net45\ArrayToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="ArrayToPdf, Version=2.0.5.0, Culture=neutral, PublicKeyToken=89f038f583b61d66, processorArchitecture=MSIL">
+      <HintPath>packages\ArrayToPdf.2.0.5\lib\net45\ArrayToPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.18.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.18.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\MigraDoc.DocumentObjectModel-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\MigraDoc.Rendering-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\MigraDoc.RtfRendering-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\PdfSharp-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\PdfSharp.Charting-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Additionals\ConvertToExcel.cs" />
+    <Compile Include="Additionals\ConvertToPDF.cs" />
+    <Compile Include="Additionals\IConvertToExcel.cs" />
+    <Compile Include="Additionals\IConvertToPDF.cs" />
+    <Compile Include="Additionals\IHash.cs" />
+    <Compile Include="BackEnd\Field.cs" />
+    <Compile Include="BackEnd\Grade.cs" />
+    <Compile Include="BackEnd\ReportI.cs" />
+    <Compile Include="BackEnd\ReportII.cs" />
+    <Compile Include="BackEnd\SQLiteManager.cs" />
+    <Compile Include="Additionals\SHA256.cs" />
+    <Compile Include="BackEnd\ActionEmployee.cs" />
+    <Compile Include="BackEnd\ActionInstructor.cs" />
+    <Compile Include="BackEnd\ActionStudent.cs" />
+    <Compile Include="BackEnd\Course.cs" />
+    <Compile Include="BackEnd\Employee.cs" />
+    <Compile Include="BackEnd\Instructor.cs" />
+    <Compile Include="BackEnd\Semester.cs" />
+    <Compile Include="BackEnd\Student.cs" />
+    <Compile Include="FrmStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStart.Designer.cs">
+      <DependentUpon>FrmStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandlingIntefaces\IHandleAddStaff.cs" />
+    <Compile Include="HandlingIntefaces\IHandleEmployeeRequest.cs" />
+    <Compile Include="HandlingIntefaces\IHandleInstructorRequest.cs" />
+    <Compile Include="HandlingIntefaces\IHandleLogIn.cs" />
+    <Compile Include="HandlingIntefaces\IHandleAddSemCourse.cs" />
+    <Compile Include="HandlingIntefaces\IHandleStudentRequest.cs" />
+    <Compile Include="IHandler.cs" />
+    <Compile Include="Interfaces\IExcelable.cs" />
+    <Compile Include="Interfaces\IField.cs" />
+    <Compile Include="Interfaces\IActionEmployee.cs" />
+    <Compile Include="Interfaces\IActionInstructor.cs" />
+    <Compile Include="Interfaces\IActionStudent.cs" />
+    <Compile Include="Interfaces\ICourse.cs" />
+    <Compile Include="Interfaces\IDatabase.cs" />
+    <Compile Include="Interfaces\IDBCreate.cs" />
+    <Compile Include="Interfaces\IDBDelete.cs" />
+    <Compile Include="Interfaces\IDBInsert.cs" />
+    <Compile Include="Interfaces\IDBSearch.cs" />
+    <Compile Include="Interfaces\IDBUpdate.cs" />
+    <Compile Include="Interfaces\IEmployee.cs" />
+    <Compile Include="Interfaces\IGrade.cs" />
+    <Compile Include="Interfaces\IInstructor.cs" />
+    <Compile Include="Interfaces\IPDFable.cs" />
+    <Compile Include="Interfaces\IReportI.cs" />
+    <Compile Include="Interfaces\IReportII.cs" />
+    <Compile Include="Interfaces\ISemester.cs" />
+    <Compile Include="Interfaces\IStudent.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="ProcessRequest.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddCourse.Designer.cs">
+      <DependentUpon>FrmAdminAddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddEmployee.Designer.cs">
+      <DependentUpon>FrmAdminAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddField.Designer.cs">
+      <DependentUpon>FrmAdminAddField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddInstructor.Designer.cs">
+      <DependentUpon>FrmAdminAddInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddSemester.Designer.cs">
+      <DependentUpon>FrmAdminAddSemester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAdminAddStudent.Designer.cs">
+      <DependentUpon>FrmAdminAddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmEmployee.Designer.cs">
+      <DependentUpon>FrmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeActions.Designer.cs">
+      <DependentUpon>FrmEmployeeActions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeAddToCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeAddToCourse.Designer.cs">
+      <DependentUpon>FrmEmployeeAddToCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeCourse.Designer.cs">
+      <DependentUpon>FrmEmployeeCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeInstructor.Designer.cs">
+      <DependentUpon>FrmEmployeeInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeReports.Designer.cs">
+      <DependentUpon>FrmEmployeeReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeSemester.Designer.cs">
+      <DependentUpon>FrmEmployeeSemester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmEmployeeStudent.Designer.cs">
+      <DependentUpon>FrmEmployeeStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmInstructor.Designer.cs">
+      <DependentUpon>FrmInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmInstructorClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmInstructorClasses.Designer.cs">
+      <DependentUpon>FrmInstructorClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmInstructorGeneralInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmInstructorGeneralInformation.Designer.cs">
+      <DependentUpon>FrmInstructorGeneralInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLogIn.Designer.cs">
+      <DependentUpon>FrmLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmStudent.Designer.cs">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmStudentChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmStudentChangePassword.Designer.cs">
+      <DependentUpon>FrmStudentChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmStudentGeneralInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmStudentGeneralInformation.Designer.cs">
+      <DependentUpon>FrmStudentGeneralInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmStudentGrades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmStudentGrades.Designer.cs">
+      <DependentUpon>FrmStudentGrades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmStudentRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmStudentRegistration.Designer.cs">
+      <DependentUpon>FrmStudentRegistration.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmStart.resx">
+      <DependentUpon>FrmStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAdminAddCourse.resx">
+      <DependentUpon>FrmAdminAddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAdminAddEmployee.resx">
+      <DependentUpon>FrmAdminAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAdminAddField.resx">
+      <DependentUpon>FrmAdminAddField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAdminAddInstructor.resx">
+      <DependentUpon>FrmAdminAddInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAdminAddSemester.resx">
+      <DependentUpon>FrmAdminAddSemester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAdminAddStudent.resx">
+      <DependentUpon>FrmAdminAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmEmployee.resx">
+      <DependentUpon>FrmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmEmployeeActions.resx">
+      <DependentUpon>FrmEmployeeActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmEmployeeAddToCourse.resx">
+      <DependentUpon>FrmEmployeeAddToCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmEmployeeCourse.resx">
+      <DependentUpon>FrmEmployeeCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmEmployeeInstructor.resx">
+      <DependentUpon>FrmEmployeeInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmEmployeeSemester.resx">
+      <DependentUpon>FrmEmployeeSemester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmEmployeeStudent.resx">
+      <DependentUpon>FrmEmployeeStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmInstructor.resx">
+      <DependentUpon>FrmInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmInstructorClasses.resx">
+      <DependentUpon>FrmInstructorClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmInstructorGeneralInformation.resx">
+      <DependentUpon>FrmInstructorGeneralInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmLogIn.resx">
+      <DependentUpon>FrmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmStudent.resx">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmStudentChangePassword.resx">
+      <DependentUpon>FrmStudentChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmStudentGeneralInformation.resx">
+      <DependentUpon>FrmStudentGeneralInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmStudentGrades.resx">
+      <DependentUpon>FrmStudentGrades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmStudentRegistration.resx">
+      <DependentUpon>FrmStudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+</Project>
